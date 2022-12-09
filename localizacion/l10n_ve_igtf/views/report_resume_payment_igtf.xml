@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_resume_invoice_igtf">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="header">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-3 mb4">
+                                    <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                         style="max-height: 100px;" alt="Logo"/>
+                                    <br/>
+                                    <span style="font-size:17px;">RIF:
+                                        <span style="font-size:17px;" t-field="o.company_id.doc_type"/>-
+                                        <span style="font-size:17px;" t-field="o.company_id.vat"/></span>
+                                </div>
+                                <div class="col-9 mb4 text-right">
+                                    <span style="font-size:17px;">Página:</span>
+                                    <span class="page" style="font-size:17px;"/> /
+                                    <span class="topage" style="font-size:17px;"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <span style="font-size:12px;">DESDE:  <span t-field="o.date_from"/> &amp;nbsp;&amp;nbsp;HASTA: <span t-field="o.date_to" /></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page">
+                         <div class="container">
+                             <table class="table table-bordered">
+                                 <thead style="background-color:#CCCCCC">
+                                     <tr>
+                                        <th>Nro OPER.</th>
+                                        <th>FECHA PAGO</th>
+                                        <th>REFERENCIA</th>
+                                        <th>RIF</th>
+                                        <th>NOMBRE O <br/>RAZON SOCIAL</th>
+                                        <th>TIPO TRANSACCIÓN</th>
+                                        <th>METODO DE PAGO</th>
+                                        <th>DIARIO</th>
+                                        <th>IMPORTE EN DIVISAS</th>
+                                        <th>BASE IMPONIBLE <br/>IGTF Bs.</th>
+                                        <th>ALICUOTA IGTF %</th>
+                                        <th>MONTO IGTF RETENIDO <br/>EN BS</th>
+                                     </tr>
+                                </thead>
+                                 <tbody>
+                                     <tr>
+                                     
+                                     </tr>
+                                 </tbody>
+                            </table>
+                         </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

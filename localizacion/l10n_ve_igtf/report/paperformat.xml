@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="paperformat_resume_invoice_igtf" model="report.paperformat">
+            <field name="default" eval="True"/>
+            <field name="name">Resume Facturas IGTF Report</field>
+            <field name="format">custom</field>
+            <field name="orientation">Landscape</field>
+            <field name="page_height">330</field>
+            <field name="page_width">219</field>
+            <field name="margin_top">45</field>
+            <field name="margin_bottom">5</field>
+            <field name="header_line" eval="False"/>
+        </record>
+
+        <record id="paperformat_resume_payment_igtf" model="report.paperformat">
+            <field name="default" eval="True"/>
+            <field name="name">Resume Pagos IGTF Report</field>
+            <field name="format">custom</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">44</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+        </record>
+    </data>
+</odoo>

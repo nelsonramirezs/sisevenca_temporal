@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_resume_invoice_igtf">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="header">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-3 mb4">
+                                    <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                         style="max-height: 100px;" alt="Logo"/>
+                                    <br/>
+                                    <span style="font-size:17px;">RIF:
+                                        <span style="font-size:17px;" t-field="o.company_id.doc_type"/>-
+                                        <span style="font-size:17px;" t-field="o.company_id.vat"/></span>
+                                </div>
+                                <div class="col-9 mb4 text-right">
+                                    <span style="font-size:17px;">Página:</span>
+                                    <span class="page" style="font-size:17px;"/> /
+                                    <span class="topage" style="font-size:17px;"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <span style="font-size:12px;">DESDE:  <span t-field="o.date_from"/> &amp;nbsp;&amp;nbsp;HASTA: <span t-field="o.date_to" /></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page">
+                         <div class="container">
+                             <table class="table table-bordered">
+                                 <thead style="background-color:#CCCCCC">
+                                     <tr>
+                                        <td>Nro OPER.</td>
+                                        <td>FECHA FACTURA</td>
+                                        <td>RIF</td>
+                                        <td>NOMBRE O <br/>RAZON SOCIAL</td>
+                                        <td>NRO FACTURA</td>
+                                        <td >NRO CONTROL</td>
+                                        <td >TIPO TRANSACCIÓN</td>
+                                        <td>IMPORTE EN DIVISAS</td>
+                                        <td>BASE IMPONIBLE <br/>IGTF Bs.</td>
+                                        <td>ALICUOTA IGTF %</td>
+                                        <td>MONTO IGTF RETENIDO <br/>EN BS</td>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                      <t t-foreach="o.get_invoice()" t-as="r">
+                                          <tr>
+                                              <td>
+                                                  <span t-esc="r_index"/>
+                                              </td>
+                                              <td>
+                                                  <span t-esc="time.strftime('%d/%m/%Y', time.strptime(str(r['move_id'].invoice_date),'%Y-%m-%d'))"/>
+                                              </td>
+                                              <td>
+                                                  <span t-esc="r['move_id'].partner_id.doc_type"/>-
+                                                  <span t-esc="r['move_id'].partner_id.vat"/>
+                                              </td>
+                                              <td>
+                                                  <span t-esc="r['move_id'].partner_id.name"/>
+                                              </td>
+                                              <td>
+                                                  <span t-esc="r['move_id'].invoice_number_next"/>
+                                              </td>
+                                              <td>
+                                                  <span t-esc="r['move_id'].invoice_number_control"/>
+                                              </td>
+                                              <td>
+                                                  <span t-esc="r['payment_method_id'].name"/>
+                                              </td>
+                                              <td>
+                                                  $ <span t-esc="r['amount_base_usd']" t-options='{"widget": "float", "precision": 2}'/>
+                                              </td>
+                                              <td>
+                                                  <span t-esc="r['monto_base']" t-options='{"widget": "float", "precision": 2}'/> Bs.
+                                              </td>
+                                              <td>
+                                                  <span t-esc="r['porcentaje']"/>  %
+                                              </td>
+                                              <td>
+                                                  <span t-esc="r['amount']" t-options='{"widget": "float", "precision": 2}'/> Bs.
+                                              </td>
+                                          </tr>
+                                      </t>
+                                 </tbody>
+                            </table>
+                         </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

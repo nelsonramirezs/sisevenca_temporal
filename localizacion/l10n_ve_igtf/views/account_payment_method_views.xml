@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        
+    <record id="view_account_payment_method_igtf_form" model="ir.ui.view">
+        <field name="name">account.payment.method.igtf.form</field>
+        <field name="model">account.payment.method</field>
+        <field name="inherit_id" ref="l10n_ve_payment_method.view_account_payment_method_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="is_igtf"/>
+                <field name="percentage" attrs="{'invisible': [('is_igtf', '=', False)],
+                             'required':[('is_igtf', '=', True)]}"/>
+                <field name="account_id" attrs="{'invisible': [('is_igtf', '=', False)],
+                             'required':[('is_igtf', '=', True)]}"/>
+                <field name="journal_id" attrs="{'invisible': [('is_igtf', '=', False)],
+                             'required':[('is_igtf', '=', True)]}"/>
+            </xpath>
+            <xpath expr="//group[1]/group[2]" position="after">
+                <p colspan="2" class="alert alert-warning" role="alert" attrs="{'invisible': [('is_igtf', '=', False)]}">
+                    <div style="color:#ff0000; font-size:15px;">
+                        <b> ADVERTENCIA !!!!! </b>
+                    </div>
+                    <div class="d-inline-block w-100">
+                        <div class="row">
+                            <div class="col-11 p-0">
+                                <ul>
+                                    <li>
+                                        <b>Solo se habilita el IGTF para los modos de pagos en Moneda extranjera</b>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </p>
+            </xpath>
+        </field>
+    </record>
+</odoo>

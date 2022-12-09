@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_move_igtf_form" model="ir.ui.view">
+            <field name="name">account.invoice.igtf.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//notebook" position="inside">
+                     <page string="Apuntes IGTF" attrs="{'invisible': [('move_type', '=', 'entry')]}">
+                        <field name="account_igtf_ids">
+                            <tree mode="tree">
+                                <field name="move_id"/>
+                                <field name="move_igtf_id"/>
+                                <field name="payment_method_id"/>
+                                <field name="rate"/>
+                                <field name="porcentaje"/>
+                                <field name="currency_id"/>
+                                <field name="amount"/>
+                                <field name="amount_rate"/>
+                                <field name="amount_base"/>
+                            </tree>
+                        </field>
+                     </page>
+                </xpath>
+                 <xpath expr="//field[@name='tax_totals_json']" position="after">
+                      <field name="tax_igtf" string="Total IGTF" readonly="1"/>
+                 </xpath>
+            </field>
+        </record>
+        
+        <record id="account_invoice_igtf_view_form" model="ir.ui.view">
+            <field name="name">account.move.igtf.view.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="l10n_ve_account.account_inherit_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_tax_rate']" position="after">
+                      <field name="tax_igtf_rate" string="Total IGTF" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

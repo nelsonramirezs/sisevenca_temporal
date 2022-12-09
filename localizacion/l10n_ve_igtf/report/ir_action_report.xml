@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_resume_invoice_igtf_report" model="ir.actions.report">
+            <field name="name">Resume Facturas IGTF</field>
+            <field name="model">resume.igtf.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">l10n_ve_igtf.report_resume_invoice_igtf</field>
+            <field name="report_file">l10n_ve_igtf.report_resume_invoice_igtf</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="action_resume_invoice_igtf_report" model="ir.actions.report">
+             <field name="paperformat_id" ref="l10n_ve_igtf.paperformat_resume_invoice_igtf"/>
+        </record>
+
+        <record id="action_resume_payment_igtf_report" model="ir.actions.report">
+            <field name="name">Resume Pagos IGTF</field>
+            <field name="model">resume.igtf.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">l10n_ve_igtf.report_resume_payment_igtf</field>
+            <field name="report_file">l10n_ve_igtf.report_resume_payment_igtf</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="action_resume_payment_igtf_report" model="ir.actions.report">
+            <field name="paperformat_id" ref="l10n_ve_igtf.paperformat_resume_payment_igtf"/>
+        </record>
+
+    </data>
+</odoo>

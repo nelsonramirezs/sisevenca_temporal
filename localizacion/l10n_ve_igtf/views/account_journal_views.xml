@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_journal_igtf_form" model="ir.ui.view">
+        <field name="name">account.journal.igtf.form</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                 <page string="IGTF pago Provedores por banco" name="bank_igtf"
+                       attrs="{'invisible': [('type', '!=','bank')]}">
+                     <group>
+                         <group>
+                             <field name="type_bank" string="Nacionalidad del Banco"/>
+                             <field name="percentage" attrs="{'invisible': [('type_bank', '!=', 'national')],
+                             'required':[('type_bank', '=', 'national')]}"/>
+                         </group>
+                         <group>
+                             <field name="account_id" attrs="{'invisible':[('type_bank', '!=', 'national')],
+                             'required':[('type_bank', '=', 'national')]}"/>
+                             <field name="journal_igtf_id"  attrs="{'invisible':[('type_bank', '!=', 'national')],
+                             'required':[('type_bank', '=', 'national')]}"/>
+                        </group>
+                     </group>
+                     <p colspan="2" class="alert alert-warning" role="alert" attrs="{'invisible': [('type_bank', '!=', 'national')]}">
+                         <div style="color:#ff0000; font-size:15px;">
+                             <b> ADVERTENCIA !!!!! </b>
+                         </div>
+                         <div class="d-inline-block w-100">
+                             <div class="row">
+                                 <div class="col-11 p-0">
+                                     <ul>
+                                         <li>
+                                             <b>Solo se habilita el IGTF para Bancos Nacionales Con Monedas extranjera</b>
+                                         </li>
+                                     </ul>
+                                 </div>
+                             </div>
+                         </div>
+                     </p>
+                 </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

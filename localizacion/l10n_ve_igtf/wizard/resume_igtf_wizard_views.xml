@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_resume_igtf_wizard_form" model="ir.ui.view">
+            <field name="name">resume.igtf.wizard.form</field>
+            <field name="model">resume.igtf.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Resume igtf">
+                    <group>
+                        <group>
+                            <field name="date_from" string="Fecha Inicio" required="1"/>
+                            <field name="date_to" string="Fecha Fin"  required="1"/>
+                        </group>
+                        <group>
+                            <field name="type_business"  required="1"/>
+                            <field name="type_payment"  required="1"/>
+                            <field name="company_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="print_report_resume_payment_igft" string="Imprimir" type="object" class="btn-primary"
+                                attrs="{'invisible': [('type_payment', '=', 'payment_fact')]}"/>
+                        <button name="print_report_resume_invoice_igft" string="Imprimir" type="object" class="btn-primary"
+                                attrs="{'invisible': [('type_payment', '=', 'payment')]}"/>
+                        <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_resume_igtf_wizard" model="ir.actions.act_window">
+            <field name="name">Resume IGTF</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">resume.igtf.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    
+        <menuitem
+            name="Resume IGTF"
+            id="menu_igtf"
+            parent="account.menu_finance_reports"
+            sequence="40"
+        />
+        <menuitem
+            id="menu_resume_igtf"
+            name="Resume Retenciones IGTF Clientes/Proveedores"
+            parent="l10n_ve_igtf.menu_igtf"
+            action="action_resume_igtf_wizard"
+        />
+</odoo>
