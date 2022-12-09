@@ -11,7 +11,6 @@
     'depends': ['account', 'l10n_ve_account_tax_amount', 'l10n_ve_account', 'l10n_ve_resume_alicuota'],
     'data': [
         'security/ir.model.access.csv',
-        'data/ir_sequence.xml',
         'views/account_book_purchase_views.xml',
         'views/book_menuitem.xml',
     ],

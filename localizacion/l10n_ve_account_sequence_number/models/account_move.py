@@ -33,7 +33,7 @@ class AccountMove(models.Model):
 
     def action_post(self):
         res = super(AccountMove, self).action_post()
-        if self.is_delivery_note:
+        if self.is_delivery_note and not self.delivery_note_next_number:
             self.delivery_note_next_number = self.get_nro_nota_entrega()
         else:
             self.invoice_number_seq()

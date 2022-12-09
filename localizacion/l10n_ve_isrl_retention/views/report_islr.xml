@@ -135,7 +135,7 @@
                                      <t t-foreach="o.line_ids" t-as="line">
                                           <tr class="text-center">
                                               <td class="border-left-right-top-bottom" t-esc="line.code"/>
-                                              <td class="border-left-right-top-bottom" t-esc="line.retention_id.move_id.date"/>
+                                              <td class="border-left-right-top-bottom" t-esc="time.strftime('%d/%m/%Y', time.strptime(str(o.move_id.invoice_date),'%Y-%m-%d'))"/>
                                               <td class="border-left-right-top-bottom" t-esc="line.retention_id.move_id.invoice_number_next"/>
                                               <td class="border-left-right-top-bottom" t-esc="line.retention_id.move_id.invoice_number_control"/>
                                               <td class="border-left-right-top-bottom" t-esc="line.islr_concept_id.name"/>

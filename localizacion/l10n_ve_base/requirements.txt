@@ -1,1 +1,0 @@
-PyCNE==0.1 ; python_version >= '3.5'

@@ -71,7 +71,6 @@ class IslrXmlWizard(models.TransientModel):
 
 class WiizarXmlDescargar(models.TransientModel):
     _name = "islr.xml.download.wizard"
-    _description = "download xml islr"
 
     name = fields.Char(string='Link', readonly="True")
     report = fields.Binary('Prepared file', readonly=True)

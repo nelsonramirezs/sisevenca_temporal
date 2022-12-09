@@ -8,7 +8,7 @@
         'description': """""",
         'category': 'Sales/Sales',
         'website': 'http://soluciones-tecno.com/',
-        'depends': ['product', 'l10n_ve_currency_rate', 'l10n_ve_base', 'purchase'],
+        'depends': ['product', 'l10n_ve_currency_rate', 'l10n_ve_res_config_settings_retentions', 'purchase'],
         'data': ['views/product_template_views.xml'],
         'license': 'LGPL-3',
         'installable': True,
