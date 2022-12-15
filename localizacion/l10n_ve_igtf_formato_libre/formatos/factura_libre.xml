@@ -149,9 +149,9 @@
             model="account.move"
             string="Factura/NC/ND"
             report_type="qweb-pdf"
-            name="l10n_ve_formato_factura_nd_nc.report_invoice_with_payments_copy"
-            file="l10n_ve_formato_factura_nd_nc.report_invoice_with_payments_copy"
-            paperformat="l10n_ve_formato_factura_nd_nc.paperformat_forma_libre"
+            name="l10n_ve_igtf_formato_libre.report_invoice_with_payments_copy"
+            file="l10n_ve_igtf_formato_libre.report_invoice_with_payments_copy"
+            paperformat="l10n_ve_igtf_formato_libre.paperformat_forma_libre"
         />
 
         
