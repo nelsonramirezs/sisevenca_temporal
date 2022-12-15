@@ -28,5 +28,10 @@
     'security/ir.model.access.csv',
     'formatos/factura_libre.xml',
     ],
+    'assets': {
+        'web.report_assets_common': [
+            'l10n_ve_account_reports/static/src/css/style.css',
+        ],
+    },
     'application': True,
 }
