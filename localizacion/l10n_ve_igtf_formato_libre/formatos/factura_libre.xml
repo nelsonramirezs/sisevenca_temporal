@@ -3,20 +3,19 @@
   <data> 
   <record id="paperformat_forma_libre" model="report.paperformat">
 
-      <field name="default" eval="True"/>
-        <field name="name">A4 Factura Forma Libre</field>
-        <field name="default" eval="True"/>
-        <field name="format">custom</field>
-        <field name="page_height">279</field>
-        <field name="page_width">216</field>
-        <field name="orientation">Portrait</field>
-        <field name="margin_top">52</field>
-        <field name="margin_bottom">5</field>
-        <field name="margin_left">5</field>
-        <field name="margin_right">5</field>
-        <field name="header_line" eval="False"/>
-        <field name="header_spacing">35</field>
-        <field name="dpi">96</field>
+      <field name="header_line" eval="False"/>
+            <field name="name">A4 Factura Forma Libre igtf</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">215</field>
+            <field name="page_width">142</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">30</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_spacing">35</field>
+            <field name="dpi">96</field>
     </record>
 
     <template id="report_invoice_with_payments_copy">
