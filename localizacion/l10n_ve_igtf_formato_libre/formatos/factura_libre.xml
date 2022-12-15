@@ -30,6 +30,19 @@
                           <li t-if="docs.invoice_date"><strong>Fecha de Emisión:</strong>
                               <span t-field="docs.invoice_date"/>
                           </li>
+                          <li t-if="o.invoice_number_next"><strong>Factura:</strong>
+                              <span t-field="o.invoice_number_next"/>
+                          </li>
+                          <li t-if="o.partner_id.name">
+                              <strong>Razón Social:</strong> <span t-field="o.partner_id.name"/>
+                          </li>
+                          <li t-if="o.partner_id.street or o.partner_id.street2">
+                              <strong>Dirección:</strong> <span t-field="o.partner_id.street"/>,
+                                            <span t-field="o.partner_id.street2"/>
+                          </li>
+                          <li t-if="o.partner_id.vat">
+                              <strong>RIF:</strong> <span t-field="o.partner_id.doc_type"/>-<span t-field="o.partner_id.vat"/>
+                          </li>
 
                         </ul>
                       </div>
