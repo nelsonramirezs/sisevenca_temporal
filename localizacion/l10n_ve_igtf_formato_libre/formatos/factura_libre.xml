@@ -144,7 +144,7 @@
                                     </div>
                                     <div class="col-14 text-right">
                                       <t t-foreach="docs.igtf_ids" t-as="igtf">
-                                      <div style="font-size:12px;">
+                                      <div >
                                               <span t-esc="igtf.metodo_pago.name" />
                                               <t t-esc="espacio"/>
                                               <span t-esc="igtf.monto_base" t-options='{"widget": "float", "precision": 2}'/>
