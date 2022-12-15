@@ -14,7 +14,8 @@
         'l10n_ve_account_tax_amount',
         'l10n_ve_account_sequence_number',
         'l10n_ve_currency_rate',
-        'l10n_ve_igtf',
+        #'l10n_ve_igtf',
+        'l10n_ve_igtf_formato_libre',
     ],
     'data': [
         'report/paperformat.xml',
