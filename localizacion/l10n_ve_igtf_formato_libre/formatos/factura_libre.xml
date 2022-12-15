@@ -140,6 +140,9 @@
                                         <ul class="list-inline mb4" style="font-size:12px;">
                                             <li><strong>FORMA DE PAGO Y RECEPCION IGTF:</strong></li>
                                         </ul>
+                                        <t t-foreach="docs.igtf_ids" t-as="igtf">
+                                            <span t-esc="igtf.metodo_pago" />
+                                        </t>
                                     </div>
                              </div> <!-- fin arriba -->
                         </div>
