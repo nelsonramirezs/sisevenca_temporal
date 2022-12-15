@@ -28,8 +28,8 @@
                     <div class="row">
                       <div class="col-12">
                         <ul class="list-inline mb4" style="font-size:12px;">
-                          <li t-if="o.invoice_date"><strong>Fecha de Emisión:</strong>
-                              <span t-field="o.invoice_date"/>
+                          <li t-if="docs.invoice_date"><strong>Fecha de Emisión:</strong>
+                              <span t-field="docs.invoice_date"/>
                           </li>
 
                         </ul>
