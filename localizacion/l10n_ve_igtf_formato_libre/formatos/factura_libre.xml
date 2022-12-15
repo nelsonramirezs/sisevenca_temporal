@@ -47,6 +47,19 @@
                         </ul>
                       </div>
                     </div>
+
+                    <t t-set="acum_alicuota_general" t-value="0.0"/>
+                     <table class="table table-borderless table-sm" style="margin-top:10px;">
+                      <thead class="bordeAbajo bordeArriba">
+                        <tr class="text-center" style="font-size:12px;">
+                            <th>CANTIDAD</th>
+                            <th>DESCRIPCIÓN</th>
+                            <th>PRECIO UNITARIO</th>
+                            <th>MONTO DEL BIEN</th>
+                        </tr>
+                      </thead>
+                     </table>
+
                   </div>
     
                 </div>
