@@ -142,16 +142,16 @@
                                         </ul>
                                     </div>
                                     <div class="col-6 text-right">
+                                      <t t-foreach="docs.igtf_ids" t-as="igtf">
                                       <ul class="list-inline mb4" style="font-size:12px;">
-                                        <t t-foreach="docs.igtf_ids" t-as="igtf">
                                           <li>
                                               <span t-esc="igtf.metodo_pago.name" />
-                                              <span t-esc="igtf.monto_base" />
+                                              <span t-esc="igtf.monto_base" t-options='{"widget": "float", "precision": 2}'/>
                                               IGTF 3%
-                                              <span t-esc="igtf.monto_ret" />
+                                              <span t-esc="igtf.monto_ret" t-options='{"widget": "float", "precision": 2}'/>
                                           </li>
-                                        </t>
                                       </ul>
+                                       </t>
                                     </div>
                              </div> <!-- fin arriba -->
                              
