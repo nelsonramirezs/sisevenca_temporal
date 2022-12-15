@@ -110,7 +110,33 @@
                      
 
                   </div> <!-- fin 2 -->
-    
+                  
+
+                  <t t-set="acum_alicuota_general" t-value="0.0"/>
+                            <table class="table table-borderless table-sm" style="margin-top:10px;">
+                                <thead class="bordeAbajo bordeArriba">
+                                    <tr class="text-center" style="font-size:12px;">
+                                        <th>CANTIDAD</th>
+                                        <th>DESCRIPCIÓN</th>
+                                        <th>PRECIO UNITARIO</th>
+                                        <th>MONTO DEL BIEN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.invoice_line_ids" t-as="line">
+                                        <tr class="text-center" style="font-size:10px;">
+                                            <td t-esc="int(line.quantity)"/>
+                                            <td t-esc="line.product_id.name"/>
+                                            <td t-esc="line.price_unit" t-options='{"widget": "monetary", "precision": 2, "display_currency": docs.currency_id}'/>
+                                            <td t-esc="line.price_subtotal" t-options='{"widget": "monetary", "precision": 2, "display_currency": docs.currency_id}'/>
+                                        </tr>
+                                        <t t-if="line.tax_ids.aliquot == 'general'">
+                                            <t t-set="acum_alicuota_general" t-value="acum_alicuota_general + line.price_subtotal"/>
+                                        </t>
+                                    </t>
+                                </tbody>
+                            </table>
+
                 </div> <!-- fin 1 -->
               </t>
             </t>
