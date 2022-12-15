@@ -158,7 +158,7 @@
                                               <t t-set="acum_ret_igtf" t-value="acum_ret_igtf+igtf.monto_ret"/>
                                       </div>
                                        </t>
-                                       <div style="font-size:12px;">TOTAL NETO A COBRAR : &amp;nbsp;&amp;nbsp;<t t-esc="acum_ret_igtf" t-options='{"widget": "float", "precision": 2}'/> </div>
+                                       <div style="font-size:12px;">TOTAL NETO A COBRAR : &amp;nbsp;&amp;nbsp;<t t-esc="acum_ret_igtf+docs.sub_total_org" t-options='{"widget": "float", "precision": 2}'/> </div>
                                     </div>
                              </div> <!-- fin arriba -->
                              
