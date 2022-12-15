@@ -141,7 +141,7 @@
                                             <li><strong>FORMA DE PAGO Y RECEPCION IGTF:</strong></li>
                                         </ul>
                                     </div>
-                                    <div class="col-6 text-right">
+                                    <div class="col-10 text-right">
                                       <t t-foreach="docs.igtf_ids" t-as="igtf">
                                       <ul class="list-inline mb4" style="font-size:12px;">
                                           <li>
