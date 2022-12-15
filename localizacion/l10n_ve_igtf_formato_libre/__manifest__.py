@@ -30,7 +30,7 @@
     ],
     'assets': {
         'web.report_assets_common': [
-            'l10n_ve_account_reports/static/src/css/style.css',
+            'l10n_ve_igtf_formato_libre/static/src/css/style.css',
         ],
     },
     'application': True,
