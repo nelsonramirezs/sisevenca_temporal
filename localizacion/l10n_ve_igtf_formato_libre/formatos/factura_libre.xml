@@ -92,16 +92,16 @@
                                             </li>
                                              <li>
                                                 <strong>TOTAL USD:</strong>
-                                                <span t-field="docs.total_pagar_eq"/>
+                                                <span t-field="docs.sub_total_eq" t-options='{"widget": "float", "precision": 2}'/>
                                             </li>
                                              <li>
                                                 <strong>IGTF 3% USD:</strong>
-                                                <span t-field="docs.impuesto_igtf_eq"/>
+                                                <span t-field="docs.impuesto_igtf_eq" t-options='{"widget": "float", "precision": 2}'/>
                                             </li>
-                                             <!--li>
+                                             <li>
                                                 <strong>TOTAL A PAGAR USD:</strong>
-                                                <span t-field="docs.amount_residual_signed_rate"/>
-                                            </li-->
+                                                <span t-field="docs.total_pagar_eq" t-options='{"widget": "float", "precision": 2}'/>
+                                            </li>
                               </ul>
                             </div>
                         </div>
