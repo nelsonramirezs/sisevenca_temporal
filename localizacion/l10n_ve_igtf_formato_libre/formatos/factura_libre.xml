@@ -63,8 +63,8 @@
                               <tr class="text-center" style="font-size:10px;">
                                 <td t-esc="int(line.quantity)"/>
                                 <td t-esc="line.product_id.name"/>
-                                <td t-esc="line.price_unit" t-options='{"widget": "monetary", "precision": 2, "display_currency": o.currency_id}'/>
-                                <td t-esc="line.price_subtotal" t-options='{"widget": "monetary", "precision": 2, "display_currency": o.currency_id}'/>
+                                <td t-esc="line.price_unit" t-options='{"widget": "monetary", "precision": 2, "display_currency": docs.currency_id}'/>
+                                <td t-esc="line.price_subtotal" t-options='{"widget": "monetary", "precision": 2, "display_currency": docs.currency_id}'/>
                               </tr>
                               <t t-if="line.tax_ids.aliquot == 'general'">
                                 <t t-set="acum_alicuota_general" t-value="acum_alicuota_general + line.price_subtotal"/>
