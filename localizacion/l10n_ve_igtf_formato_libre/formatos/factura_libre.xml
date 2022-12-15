@@ -141,7 +141,12 @@
                                             <li><strong>FORMA DE PAGO Y RECEPCION IGTF:</strong></li>
                                         </ul>
                                         <t t-foreach="docs.igtf_ids" t-as="igtf">
-                                            <span t-esc="igtf.metodo_pago.name" />
+                                            <li>
+                                              <span t-esc="igtf.metodo_pago.name" />
+                                              <span t-esc="igtf.monto_base" />
+                                              IGTF 3%
+                                              <span t-esc="igtf.monto_ret" />
+                                            </li>
                                         </t>
                                     </div>
                              </div> <!-- fin arriba -->
