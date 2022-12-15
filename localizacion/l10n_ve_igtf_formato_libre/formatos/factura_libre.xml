@@ -128,6 +128,7 @@
                                             <li> <span t-esc="docs.exemto_org" t-options='{"widget": "float", "precision": 2}'/></li>
                                             <li> <span t-esc="acum_alicuota_general" t-options='{"widget": "float", "precision": 2}'/></li>
                                             <li> <span t-esc="docs.base_imponible_org" t-options='{"widget": "float", "precision": 2}'/></li>
+                                            <li> <span t-esc="docs.total_impuesto_org" t-options='{"widget": "float", "precision": 2}'/></li>
                                             <li> <span t-esc="docs.sub_total_org" t-options='{"widget": "float", "precision": 2}'/></li>
                                         </ul>
                                     </div>
