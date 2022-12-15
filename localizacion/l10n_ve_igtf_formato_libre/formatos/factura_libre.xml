@@ -144,13 +144,13 @@
                                     </div>
                                     <div class="col-14 text-right">
                                       <t t-foreach="docs.igtf_ids" t-as="igtf">
-                                      <div >
+                                      <div style="font-size:12px;">
                                               <span t-esc="igtf.metodo_pago.name" />
-                                              <t t-esc="espacio"/>
+                                              <span t-esc="espacio"/>
                                               <span t-esc="igtf.monto_base" t-options='{"widget": "float", "precision": 2}'/>
-                                              <t t-esc="espacio"/>
+                                              
                                               IGTF 3%
-                                              <t t-esc="espacio"/>
+                                            
                                                &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
                                               <span t-esc="igtf.monto_ret" t-options='{"widget": "float", "precision": 2}'/>
                                       </div>
