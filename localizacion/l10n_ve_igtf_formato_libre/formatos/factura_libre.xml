@@ -143,8 +143,7 @@
                                     </div>
                                     <div class="col-14 text-right">
                                       <t t-foreach="docs.igtf_ids" t-as="igtf">
-                                      <ul class="list-inline mb4" style="font-size:12px;">
-                                          <li>
+                                      <div>
                                               <span t-esc="igtf.metodo_pago.name" />
                                               &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
                                               <span t-esc="igtf.monto_base" t-options='{"widget": "float", "precision": 2}'/>
@@ -152,8 +151,7 @@
                                               IGTF 3%
                                                &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
                                               <span t-esc="igtf.monto_ret" t-options='{"widget": "float", "precision": 2}'/>
-                                          </li>
-                                      </ul>
+                                         </div>
                                        </t>
                                     </div>
                              </div> <!-- fin arriba -->
