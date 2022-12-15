@@ -123,7 +123,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <t t-foreach="o.invoice_line_ids" t-as="line">
+                                    <t t-foreach="docs.invoice_line_ids" t-as="line">
                                         <tr class="text-center" style="font-size:10px;">
                                             <td t-esc="int(line.quantity)"/>
                                             <td t-esc="line.product_id.name"/>
