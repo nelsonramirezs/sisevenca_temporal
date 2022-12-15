@@ -86,11 +86,11 @@
                                                 <strong>BASE IMPONIBLE USD:</strong>
                                                 <span t-esc="acum_alicuota_general / docs.os_currency_rate" t-options='{"widget": "float", "precision": 2}'/>
                                             </li>
-                                             <!--li>
-                                                <strong>IVA 16% USD:</strong>
-                                                <span t-field="docs.amount_tax_rate"/>
-                                            </li>
                                              <li>
+                                                <strong>IVA 16% USD:</strong>
+                                                <span t-field="docs.total_impuesto_eq"/>
+                                            </li>
+                                             <!--li>
                                                 <strong>TOTAL USD:</strong>
                                                 <span t-field="docs.amount_total_signed_aux_rate"/>
                                             </li>
