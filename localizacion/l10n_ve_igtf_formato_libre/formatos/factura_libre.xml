@@ -135,6 +135,8 @@
                                 </div>
                             </div>
                             <t t-set="espacio" t-value="0"/>
+                            <t t-set="acum_ret_igtf" t-value="0"/>
+
                              <div class="bordeAbajo bordeArriba"><!-- arriba -->
                                 <div class="col-2"/>
                                     <div class="col-4 text-right">
@@ -153,8 +155,10 @@
                                             
                                                &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
                                               <span t-esc="igtf.monto_ret" t-options='{"widget": "float", "precision": 2}'/>
+                                              <t t-set="acum_ret_igtf" t-value="acum_ret_igtf+igtf.monto_ret"/>
                                       </div>
                                        </t>
+                                       <div>TOTAL NETO A COBRAR :<t t-esc="acum_ret_igtf"/> </div>
                                     </div>
                              </div> <!-- fin arriba -->
                              
