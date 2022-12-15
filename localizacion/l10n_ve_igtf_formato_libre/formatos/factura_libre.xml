@@ -134,9 +134,14 @@
                                     </div>
                                 </div>
                             </div>
-                             <div class="bordeAbajo bordeArriba">
-                                hola
-                             </div>
+                             <div class="bordeAbajo bordeArriba"><!-- arriba -->
+                                <div class="col-2"/>
+                                    <div class="col-4 text-right">
+                                        <ul class="list-inline mb4" style="font-size:12px;">
+                                            <li><strong>FORMA DE PAGO Y RECEPCION IGTF:</strong></li>
+                                        </ul>
+                                    </div>
+                             </div> <!-- fin arriba -->
                         </div>
 
                 </div> <!-- fin 1 -->
