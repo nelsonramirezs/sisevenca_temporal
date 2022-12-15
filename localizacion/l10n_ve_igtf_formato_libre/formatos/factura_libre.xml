@@ -134,7 +134,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <t t-set="espacio" t-value="             "/>
+                            <t t-set="espacio" t-value="----"/>
                              <div class="bordeAbajo bordeArriba"><!-- arriba -->
                                 <div class="col-2"/>
                                     <div class="col-4 text-right">
@@ -153,7 +153,7 @@
                                               <t t-esc="espacio"/>
                                                &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
                                               <span t-esc="igtf.monto_ret" t-options='{"widget": "float", "precision": 2}'/>
-                                         </div>
+                                      </div>
                                        </t>
                                     </div>
                              </div> <!-- fin arriba -->
