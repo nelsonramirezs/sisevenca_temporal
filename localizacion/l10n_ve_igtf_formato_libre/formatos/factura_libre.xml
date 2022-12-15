@@ -40,7 +40,7 @@
                               <strong>Dirección:</strong> <span t-field="docs.partner_id.street"/>,
                                             <span t-field="docs.partner_id.street2"/>
                           </li>
-                          <li t-if="o.partner_id.vat">
+                          <li t-if="docs.partner_id.vat">
                               <strong>RIF:</strong> <span t-field="docs.partner_id.doc_type"/>-<span t-field="docs.partner_id.vat"/>
                           </li>
 
