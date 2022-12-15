@@ -73,40 +73,7 @@
                       </tbody>
                      </table>
 
-                     <div class="clearfix" style="margin-top:20px;"><!-- 1 -->
-                                 <div class="row">
-                                     <div class="col-2"/>
-                                     <div class="col-7 text-left">
-                                         <ul class="list-inline mb4" style="font-size:12px;">
-                                             <li>
-                                                <strong>Tasa de cambio oficial USD/bs:</strong>
-                                                <span t-field="docs.os_currency_rate"/>
-                                            </li>
-                                             <li>
-                                                <strong>BASE IMPONIBLE USD:</strong>
-                                                <span t-esc="acum_alicuota_general / docs.os_currency_rate" t-options='{"widget": "float", "precision": 2}'/>
-                                            </li>
-                                             <li>
-                                                <strong>IVA 16% USD:</strong>
-                                                <span t-field="docs.amount_tax_rate"/>
-                                            </li>
-                                             <li>
-                                                <strong>TOTAL USD:</strong>
-                                                <span t-field="docs.amount_total_signed_aux_rate"/>
-                                            </li>
-                                             <li>
-                                                <strong>IGTF 3% USD:</strong>
-                                                <span t-field="docs.tax_igtf_rate"/>
-                                            </li>
-                                             <li>
-                                                <strong>TOTAL A PAGAR USD:</strong>
-                                                <span t-field="docs.amount_residual_signed_rate"/>
-                                            </li>
-                                         </ul>
-                                     </div>
-                                 </div>
-                            </div>
-                        </div><!-- fin 1 -->
+                     
 
                   </div>
     
