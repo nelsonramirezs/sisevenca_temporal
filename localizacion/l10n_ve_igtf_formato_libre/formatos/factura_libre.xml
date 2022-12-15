@@ -147,11 +147,11 @@
                                     <div class="col-14 text-right">
                                       <t t-foreach="docs.igtf_ids" t-as="igtf">
                                       <div style="font-size:12px;">
-                                              <t t-esc="igtf.metodo_pago.name" />
+                                              <t t-esc="igtf.metodo_pago.name"/>: 
                                               &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-                                              <t t-esc="igtf.monto_base" t-options='{"widget": "float", "precision": 2}'/>
+                                              <t t-esc="igtf.monto_base" t-options='{"widget": "float", "precision": 2}'/> /  
                                               &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
-                                              IGTF 3%
+                                              IGTF 3% / 
                                                &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
                                               <t t-esc="igtf.monto_ret" t-options='{"widget": "float", "precision": 2}'/>
                                               <t t-set="acum_ret_igtf" t-value="acum_ret_igtf+igtf.monto_ret"/>
