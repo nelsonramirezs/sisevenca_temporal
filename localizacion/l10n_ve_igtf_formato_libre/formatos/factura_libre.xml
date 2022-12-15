@@ -86,7 +86,7 @@
                                                 <strong>BASE IMPONIBLE USD:</strong>
                                                 <span t-esc="acum_alicuota_general / docs.os_currency_rate" t-options='{"widget": "float", "precision": 2}'/>
                                             </li>
-                                             <li>
+                                             <!--li>
                                                 <strong>IVA 16% USD:</strong>
                                                 <span t-field="docs.amount_tax_rate"/>
                                             </li>
@@ -101,7 +101,7 @@
                                              <li>
                                                 <strong>TOTAL A PAGAR USD:</strong>
                                                 <span t-field="docs.amount_residual_signed_rate"/>
-                                            </li>
+                                            </li-->
                               </ul>
                             </div>
                         </div>
