@@ -71,7 +71,6 @@ class AccountPaymentIgtf(models.TransientModel):
         else:
             if self.amount_total or self.amount_total!=0:
                 tasa=self.amount_total_signed/self.amount_total
-        tasa=self.os_currency_rate
         return tasa
 
 
