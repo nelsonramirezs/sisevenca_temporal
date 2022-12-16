@@ -64,7 +64,6 @@ class AccountPaymentIgtf(models.TransientModel):
     def busca_tasa(self,det):
         tasa=1
         if self.currency_id.id==self.env.company.currency_id.id:
-            #busca=self.env['res.currency.rate'].search([('currency_id','=',self.currency_id.id),('name','<=',self.invoice_date)],order='name asc')
             busca=self.env['res.currency.rate'].search([('currency_id','=',2),('name','<=',det.invoice_date)],order='name asc')
             if busca:
                 for det in busca:
@@ -72,6 +71,7 @@ class AccountPaymentIgtf(models.TransientModel):
         else:
             if self.amount_total or self.amount_total!=0:
                 tasa=self.amount_total_signed/self.amount_total
+        tasa=self.os_currency_rate
         return tasa
 
 
