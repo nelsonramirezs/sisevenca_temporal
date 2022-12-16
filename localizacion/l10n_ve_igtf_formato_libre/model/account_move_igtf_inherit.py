@@ -214,16 +214,37 @@ class AccountMove(models.Model):
             self.pago_bs_eq=abs(self.pago_bs*self.busca_tasa())
 
     def _compute_pago_usd_eq(self):
-        if self.currency_id.id==self.env.company.currency_id.id:
+        """if self.currency_id.id==self.env.company.currency_id.id:
             self.pago_usd_eq=abs(self.pago_divisa/self.busca_tasa())
         else:
-            self.pago_usd_eq=abs(self.pago_divisa*self.busca_tasa())
+            self.pago_usd_eq=abs(self.pago_divisa*self.busca_tasa())"""
+        valor=igtf=0
+        for selff in self:
+            if selff.igtf_ids:
+                for rec in selff.igtf_ids:
+                    if selff.currency_id.id==selff.env.company.currency_id.id:
+                        valor=valor+round(rec.monto_base_usd,1)
+                        #igtf=igtf+rec.monto_ret
+                    else:
+                        valor=valor+rec.monto_base
+                        #igtf=igtf+rec.monto_ret/rec.tasa
+            selff.pago_usd_eq=valor
+            #selff.impuesto_igtf=igtf
 
     def _compute_igtf_eq(self):
-        if self.currency_id.id==self.env.company.currency_id.id:
+        """if self.currency_id.id==self.env.company.currency_id.id:
             self.impuesto_igtf_eq=abs(self.impuesto_igtf/self.busca_tasa())
         else:
-            self.impuesto_igtf_eq=abs(self.impuesto_igtf*self.busca_tasa())
+            self.impuesto_igtf_eq=abs(self.impuesto_igtf*self.busca_tasa())"""
+        valor=igtf=0
+        for selff in self:
+            if selff.igtf_ids:
+                for rec in selff.igtf_ids:
+                    if selff.currency_id.id==selff.env.company.currency_id.id:
+                        igtf=igtf+rec.monto_ret/rec.tasa
+                    else:
+                        igtf=igtf+rec.monto_ret
+            selff.impuesto_igtf_eq=igtf
 
     def _compute_total_eq(self):
         if self.currency_id.id==self.env.company.currency_id.id:
@@ -239,15 +260,15 @@ class AccountMove(models.Model):
 
     def busca_tasa(self):
         tasa=1
-        if self.currency_id.id==self.env.company.currency_id.id:
-            #busca=self.env['res.currency.rate'].search([('currency_id','=',self.currency_id.id),('name','<=',self.invoice_date)],order='name asc')
+        """if self.currency_id.id==self.env.company.currency_id.id:
             busca=self.env['res.currency.rate'].search([('currency_id','=',2),('name','<=',self.invoice_date)],order='name asc')
             if busca:
                 for det in busca:
                     tasa=det.inverse_company_rate
         else:
             if self.amount_total or self.amount_total!=0:
-                tasa=self.amount_total_signed/self.amount_total
+                tasa=self.amount_total_signed/self.amount_total"""
+        tasa=self.os_currency_rate
         return tasa
 
     def _compute_taxes_group(self):
