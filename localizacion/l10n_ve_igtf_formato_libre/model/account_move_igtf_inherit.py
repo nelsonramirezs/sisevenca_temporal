@@ -215,13 +215,13 @@ class AccountMove(models.Model):
 
     def _compute_pago_usd_eq(self):
         if self.currency_id.id==self.env.company.currency_id.id:
-            self.pago_usd_eq=abs(self.pago_divisa/self.busca_tasa())
+            self.pago_usd_eq=69#abs(self.pago_divisa/self.busca_tasa())
         else:
             self.pago_usd_eq=abs(self.pago_divisa*self.busca_tasa())
 
     def _compute_igtf_eq(self):
         if self.currency_id.id==self.env.company.currency_id.id:
-            self.impuesto_igtf_eq=55#abs(self.impuesto_igtf/self.busca_tasa())
+            self.impuesto_igtf_eq=abs(self.impuesto_igtf/self.busca_tasa())
         else:
             self.impuesto_igtf_eq=abs(self.impuesto_igtf*self.busca_tasa())
 
