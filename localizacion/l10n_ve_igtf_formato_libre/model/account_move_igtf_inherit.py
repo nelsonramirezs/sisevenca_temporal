@@ -215,7 +215,7 @@ class AccountMove(models.Model):
 
     def _compute_pago_usd_eq(self):
         if self.currency_id.id==self.env.company.currency_id.id:
-            self.pago_usd_eq=69#abs(self.pago_divisa/self.busca_tasa())
+            self.pago_usd_eq=self.busca_tasa() #abs(self.pago_divisa/self.busca_tasa())
         else:
             self.pago_usd_eq=abs(self.pago_divisa*self.busca_tasa())
 
