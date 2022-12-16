@@ -221,7 +221,7 @@ class AccountMove(models.Model):
 
     def _compute_igtf_eq(self):
         if self.currency_id.id==self.env.company.currency_id.id:
-            self.impuesto_igtf_eq=abs(self.impuesto_igtf/self.busca_tasa())
+            self.impuesto_igtf_eq=55#abs(self.impuesto_igtf/self.busca_tasa())
         else:
             self.impuesto_igtf_eq=abs(self.impuesto_igtf*self.busca_tasa())
 
